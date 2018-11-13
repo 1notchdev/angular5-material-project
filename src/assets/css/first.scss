@@ -1,0 +1,181 @@
+
+@import './globals.scss';
+
+@font-face {
+    font-family: 'GothamBook';
+    src: local('GothamBook'), local('GothamBook'),
+      url("../fonts/GothamBook.ttf") format("truetype"),
+}
+
+@font-face {
+    font-family: 'DINBold';
+    src: url('../fonts/D-DIN-Bold.woff2') format('woff2'),
+        url('../fonts/D-DIN-Bold.woff') format('woff'),
+        url('../fonts/D-DIN-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'DINRegular';
+    src: url('../fonts/D-DIN.woff2') format('woff2'),
+        url('../fonts/D-DIN.woff') format('woff'),
+        url('../fonts/D-DIN.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'DINItalic';
+    src: url('../fonts/D-DIN-Italic.woff2') format('woff2'),
+        url('../fonts/D-DIN-Italic.woff') format('woff'),
+        url('../fonts/D-DIN-Italic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+}
+
+
+html{
+    overflow: hidden;
+    font-family: 'DINRegular' !important;
+    height: 100%;
+}
+
+html * {
+    font-family: 'DINRegular' !important;
+}
+
+body {
+    background: $black !important;
+    height: 100%;
+    overflow-y: auto;
+}
+
+button{
+    font-size: $normal-fontsize;
+    display: inline-block;
+    position: relative;
+    outline: none !important;
+    letter-spacing: 1.6px;
+    background: transparent;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+
+    &.active{
+        color: white;
+        background: #2eb398;
+    }
+}
+
+a{
+    cursor: pointer;
+}
+
+
+textarea:focus, input:focus,.form-control:focus{
+    outline: none !important;
+    border: unset !important;
+}
+
+
+  /* Change the white to any color ;) */
+  input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0 30px white inset;
+  }
+  
+  /*Change text in autofill textbox*/
+  input:-webkit-autofill {
+    -webkit-text-fill-color: black !important;
+  }
+  
+    /********************************
+        ANGULAR MATERIAL
+    *********************************/
+
+    @import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+
+    .mat-form-field {
+        width: 100%;
+      }
+      
+    .mat-progress-bar {
+        left: 0 !important;
+        position: absolute !important;
+        margin-top: 15px !important;
+    }
+
+    /********************************
+        ANGULAR MATERIAL SIDENAV
+    *********************************/
+    
+    .mat-sidenav-container{
+
+        mat-sidenav, 
+        mat-sidenav.md-locked-open, 
+        mat-sidenav.md-closed.md-locked-open-add-active {
+
+            &#leftNav{
+
+                min-width: 200px !important;
+                max-width: 200px !important;
+                background:#2e2d2c;
+                padding: 25px;
+
+
+                h4{
+                    text-align: center;
+                    color: white;
+                }
+
+                a{
+                    color: white;
+                    text-decoration: none;
+                    font-size: $normal-fontsize;
+
+                    &.active{ font-weight: 600;} 
+
+                }
+                
+
+                ul{
+                    display: inline-block;
+                    padding: 0;
+        
+                    .menu-item{
+                        list-style-type: none;
+                        text-align: left;
+                        padding: 5px 0;
+                        color: white;
+                        padding: 10px 0;
+                        
+                        a {
+                            &.active{
+                                font-weight:bold;
+                            }
+                        }
+                    }
+                }
+
+                .button_upload{
+                    display: inline-block;
+                    width: 50%;
+                    margin: 0 auto 5vh 25%;
+                }
+            }
+        }
+
+        .mat-sidenav-content{
+            overflow: hidden;
+
+            section{
+                padding: 20px;
+                width: calc(100%);
+                height: calc(100vh - 63px);
+                overflow: scroll;
+            }
+        }
+       
+    }

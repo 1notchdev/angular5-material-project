@@ -1,0 +1,33 @@
+<app-header></app-header>
+<div id="datasource_container" class="page-container">
+    <h1 class="page-title text-align-center">Data Source</h1>
+    <div class="card-container row">
+        <div class="col-md-4 display-flex">
+            <div class="card-black-theme card with-action-btn">
+                <p class="card-title">Stocks</p>
+                <p>A wide range of US stocks to use for your Artificial intelligence Models.</p>
+                <button mat-stroked-button class="green-dot-button btn_action" (click)="newStocksAgent()">New Agent
+                    <mat-icon>add_circle</mat-icon>
+                </button>
+            </div>
+        </div>
+        <div class="col-md-4 display-flex">
+            <div class="card-black-theme card with-action-btn">
+                <p class="card-title">Crypto</p>
+                <p>A wide range of Cryptocurrencies to use for your artificial intelligence models.</p>
+                <button mat-stroked-button class="green-dot-button btn_action" (click)="newCryptoAgent()">New Agent
+                    <mat-icon>add_circle</mat-icon>
+                </button>
+            </div>
+        </div>
+        <div class="col-md-4 display-flex">
+            <div class="card-black-theme card with-action-btn">
+                <p class="card-title">Excel</p>
+                <p>Upload your own data files as the foundation for your artificial intelligence models.</p>
+                <button mat-stroked-button class="green-dot-button btn_action" (click)="newExcelAgent()">New Agent
+                    <mat-icon>add_circle</mat-icon>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

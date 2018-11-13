@@ -1,0 +1,17 @@
+<header class="header">
+    <div class="left">
+    	<a [routerLink]="['/home']" class="logo"><img src="./assets/img/remi_logo_green.png" alt="remi" class="img-responsive"></a>
+    </div>
+    <div class="right vertical-align normal-margin-left">
+    	<a [matMenuTriggerFor]="profileMenu" class="profile"><img src="./assets/img/no-avatar.png" alt="remi" class="img-responsive"></a>
+        <!-- <button mat-raised-button (click) = "logout()">
+            Logout
+        </button> -->
+    </div> <!-- end .left -->
+    <mat-menu #profileMenu="matMenu" yPosition="below" [overlapTrigger]="false">
+		<a mat-menu-item [routerLink]="['/support']">Support</a>
+		<a mat-menu-item>Account</a>
+		<a mat-menu-item [routerLink]="['/terms']">Terms</a>
+		<a mat-menu-item (click)="logout()">Logout</a>
+	</mat-menu>
+</header> <!-- end .header -->

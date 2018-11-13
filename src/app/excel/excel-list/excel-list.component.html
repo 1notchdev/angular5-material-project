@@ -1,0 +1,27 @@
+<div id="crypto_list_container" class="page-container">
+    <h1 class="page-title no-margin-bottom">Excel</h1>
+    <p class="text-desc">Choose which Excel you would like to use for your A.I.</p>
+    <div class="row">
+        <div class="col-md-8">
+            <mat-table #table [dataSource]="dataSource" matSort class="table-black-theme">
+                <ng-container matColumnDef="Id">
+                    <mat-header-cell *matHeaderCellDef mat-sort-header> Id </mat-header-cell>
+                    <mat-cell *matCellDef="let element"> {{element.Id}} </mat-cell>
+                </ng-container>
+
+                <ng-container matColumnDef="Name">
+                    <mat-header-cell *matHeaderCellDef mat-sort-header> Name </mat-header-cell>
+                    <mat-cell *matCellDef="let element"> {{element.Name}} </mat-cell>
+                </ng-container>
+
+                <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+                <mat-row *matRowDef="let row; columns: displayedColumns;" (click)="selExcel(row)"></mat-row>
+            </mat-table>
+        </div>
+        <div class="col-md-4">
+            <div class="card-container normal-padding-right">
+                aaaa
+            </div>
+        </div>
+    </div>
+</div>

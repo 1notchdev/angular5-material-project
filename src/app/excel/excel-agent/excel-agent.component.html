@@ -1,0 +1,90 @@
+<div id="crypto_agent_container" class="page-container">
+	<h1 class="page-title">{{model.Name}} - {{model.data}}</h1>
+	<mat-tab-group class="tab-group-black-theme">
+		<mat-tab label="Train">
+			<div class="card-container row">
+				<div class="col-md-8">
+					<div class="row">
+						<div class="col-md-6 display-flex">
+							<div class="card-black-theme card">
+								<p class="card-title">Input Variables</p>
+								<p class="slide-toggle-container normal-margin-top">
+									#Date
+									<mat-slide-toggle [checked]="settings.time==='Continuous'" class="slide-toggle-green-theme"></mat-slide-toggle>
+								</p>
+								<p class="slide-toggle-container">
+									#Model
+									<mat-slide-toggle [checked]="settings.open==='Continuous'" class="slide-toggle-green-theme"></mat-slide-toggle>
+								</p>
+								<p class="slide-toggle-container">
+									#Description
+									<mat-slide-toggle [checked]="settings.high==='Continuous'" class="slide-toggle-green-theme"></mat-slide-toggle>
+								</p>
+								<p class="slide-toggle-container">
+									#Technician
+									<mat-slide-toggle [checked]="settings.low==='Continuous'" class="slide-toggle-green-theme"></mat-slide-toggle>
+								</p>
+								<p class="slide-toggle-container">
+									#Part 1
+									<mat-slide-toggle [checked]="settings.close==='Continuous'" class="slide-toggle-green-theme"></mat-slide-toggle>
+								</p>
+								<p class="slide-toggle-container">
+									#Part 2
+									<mat-slide-toggle [checked]="settings.volume==='Continuous'" class="slide-toggle-green-theme"></mat-slide-toggle>
+								</p>
+							</div>
+						</div>
+						<div class="col-md-6 display-flex">
+							<div class="card-black-theme card">
+								<p class="card-title">Prediction Column</p>
+								<p class="slide-toggle-container normal-margin-top">
+									#Date
+									<mat-slide-toggle class="slide-toggle-green-theme"></mat-slide-toggle>
+								</p>
+								<p class="slide-toggle-container">
+									#Model
+									<mat-slide-toggle class="slide-toggle-green-theme"></mat-slide-toggle>
+								</p>
+								<p class="slide-toggle-container">
+									#Description
+									<mat-slide-toggle class="slide-toggle-green-theme"></mat-slide-toggle>
+								</p>
+								<p class="slide-toggle-container">
+									#Technician
+									<mat-slide-toggle class="slide-toggle-green-theme"></mat-slide-toggle>
+								</p>
+								<p class="slide-toggle-container">
+									#Part 1
+									<mat-slide-toggle class="slide-toggle-green-theme"></mat-slide-toggle>
+								</p>
+								<p class="slide-toggle-container">
+									#Part 2
+									<mat-slide-toggle class="slide-toggle-green-theme"></mat-slide-toggle>
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<div class="card-black-theme card with-action-btn">
+						<p class="card-title">Settings</p>
+						<p class="slide-toggle-container normal-margin-top">
+							Time Series
+							<mat-slide-toggle class="slide-toggle-green-theme"></mat-slide-toggle>
+						</p>
+						<button mat-stroked-button class="green-dot-button btn_action" (click)="train()">Train
+							<mat-icon>add_circle</mat-icon>
+						</button>
+					</div>
+				</div>
+			</div>
+		</mat-tab>
+		<mat-tab label="Test">
+			<p>Test Content</p>
+			<p>Test Content</p>
+		</mat-tab>
+		<mat-tab label="Run Agent">
+			<p>Run Agent Content</p>
+		</mat-tab>
+	</mat-tab-group>
+</div>

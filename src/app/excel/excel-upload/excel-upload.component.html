@@ -1,0 +1,45 @@
+<div id="excel_upload_container" class="page-container">
+  <h5 class="page-title no-margin-bottom">
+    <span *ngIf= "progress==0">Upload a file</span>
+    <span *ngIf= "progress!=0">Upload in progress</span>
+  </h5>
+  <div class="row">
+      <div class="offset-md-3 col-md-6" [ngClass]="{'outoftheway': progress!=0}">
+        <div class="drop-container my-3 p-4" ngFileDrop [options]="options" (uploadOutput)="onUploadOutput($event)" [uploadInput]="uploadInput">
+            <div class="row">
+            <div class="col-md-12 my-3">
+              <h5 class="mt-4 mb-5">Drag & Drop Files Here</h5>
+              <h5 class="highlight my-4">Or</h5>
+            </div>
+            <div class="col-md-12">
+              <label class="upload-button">
+                  <input type="file" ngFileSelect [options]="options" (uploadOutput)="onUploadOutput($event)" [uploadInput]="uploadInput">
+                  ADD FILES
+              </label>
+            </div>
+            <div class="col-md-12 my-5 font-bold">
+              Supported files include: <br>
+              csv, excel
+            </div>
+          </div>
+          <div *ngIf="msgUpload">{{ msgUpload }}</div>
+        </div>
+      </div>
+      <div class="offset-md-4 col-md-4 my-5" *ngIf= "progress!=0">
+          <br>
+          <br>
+          <h2 class="my-1"><span class="font-bold">{{progress}}</span>%</h2>  
+          <mat-progress-bar
+                class="my-3"
+                [color]="color"
+                [mode]="mode"
+                [value]="progress"
+                [bufferValue]="bufferValue"
+                *ngIf = "progress!=0">
+          </mat-progress-bar>
+          <br>
+          <br>
+          <p *ngIf = "speed">{{speed}}</p>
+        </div>
+  </div>
+</div>

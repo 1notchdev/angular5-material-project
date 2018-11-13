@@ -1,0 +1,51 @@
+<div id="login_container" class="page-container">
+    <div class="login-page" *ngIf="!loading">
+        <div class="form">
+            <h2 class="block text-align-center page-title font-dinbold">Welcome to Catalyst</h2>
+            <br>
+            <br>
+            <form name="form" class="login-form" (ngSubmit)="f.form.valid && login()" #f="ngForm" *ngIf = "isLogging" novalidate>
+                <mat-form-field class="example-full-width white-input-field" [ngClass]="{ 'has-error': f.submitted && !Username.valid }">
+                    <input matInput type="text" placeholder="USERNAME" name="Username" [(ngModel)]="user.Username" #Username="ngModel" required >
+                </mat-form-field>
+                <mat-form-field class="example-full-width white-input-field" [ngClass]="{ 'has-error': f.submitted && !Password.valid }">
+                    <input matInput type="Password" placeholder="PASSWORD" name="Password" [(ngModel)]="user.Password" #Password="ngModel" required >
+                </mat-form-field>
+                <div class="form-group"><div *ngIf="error" class="alert alert-danger">{{error}}</div></div>
+                <div class="block text-align-center">
+                    <button [disabled]="loading" type="submit" mat-stroked-button class="green-dot-button button-lg">
+                        <span *ngIf="!loading">Login</span>
+                        <img *ngIf="loading" src="" />
+                    </button>
+                </div>
+                <br>
+                <p class="message text-white font-dinbold" (click)="isLogging = ! isLogging">Don't have a login? <a href="#" class="text-green font-dinbold">Signup.</a></p>
+            </form>
+            <form name="form" class="register-form" (ngSubmit)="f.form.valid && register()" #f="ngForm" *ngIf = "!isLogging" novalidate>
+                <mat-form-field class="example-full-width white-input-field" [ngClass]="{ 'has-error': f.submitted && !Username.valid }">
+                    <input matInput type="text" placeholder="USERNAME" name="Username" [(ngModel)]="user.Username" #Username="ngModel" required >
+                </mat-form-field>
+                <mat-form-field class="example-full-width white-input-field" [ngClass]="{ 'has-error': f.submitted && !Password.valid }">
+                    <input matInput type="Password" placeholder="PASSWORD" name="Password" [(ngModel)]="user.Password" #Password="ngModel" required >
+                </mat-form-field>
+                <div class="form-group"><div *ngIf="error" class="alert alert-danger">{{error}}</div></div>
+                <div class="block text-align-center">
+                    <button [disabled]="loading" type="submit" mat-stroked-button class="green-dot-button button-lg">
+                        <span>Create an account</span>
+                        <!-- <span *ngIf="!loading">Create an account</span>
+                        <img *ngIf="loading" src="" /> -->
+                    </button>
+                </div>
+                <br>
+                <p class="message text-white font-dinbold" (click)="isLogging = ! isLogging">Already registered? <a href="#" class="text-green font-dinbold">Sign in.</a></p>
+            </form>
+            <br>
+            <div class="block text-align-center">
+                <img src="./assets/img/remi_logo_green.png" alt="remi" class="logo img-responsive">
+            </div>
+        </div>
+    </div>
+    <div class="login-loading-container" *ngIf="loading">
+        <img src="./assets/img/loading.gif">
+    </div>
+</div>

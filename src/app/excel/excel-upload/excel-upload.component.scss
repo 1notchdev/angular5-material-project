@@ -1,0 +1,89 @@
+@import '../../../assets/css/globals.scss';
+
+
+/*****************************************
+    IMPORT NEW FILE
+*****************************************/
+/* For some reason we cannot make the upload input box disappear when progress!=0 using ngIf, or it bugs, so we just set it outside the screen */
+.outoftheway{
+    position: absolute;
+    right: 50000px;
+}
+
+
+#excel_upload_container{
+    text-align: center;
+    color: white;
+
+    .drop-container{
+        background: transparent;
+        border-radius: 3px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 1px dashed $green;
+        color: $grey;
+        width: 100%;
+        min-height: 50vh;
+
+        .highlight{
+            font-weight: bold;
+            color: white;
+        }
+    
+        .upload-button{
+
+            background-color: $green;
+            font-weight: bold;
+            box-shadow: 0 3px 1px -2px rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12);
+            color: black;
+            box-sizing: border-box;
+            position: relative;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            cursor: pointer;
+            outline: 0;
+            border: none;
+            -webkit-tap-highlight-color: transparent;
+            display: inline-block;
+            white-space: nowrap;
+            text-decoration: none;
+            vertical-align: baseline;
+            text-align: center;
+            margin: 0;
+            padding: 10px 40px;
+            border-radius: 5px;
+    
+            input{
+                display: none;
+            }
+        }
+
+        
+
+    }
+}
+
+:host ::ng-deep .mat-progress-bar {
+    width: 100%;
+    border-radius: 10px;
+    height: 15px;
+
+    .mat-progress-bar-background {
+        border-radius: 10px;
+    }
+
+    .mat-progress-bar-buffer {
+        background: #797978;
+    }
+
+    .mat-progress-bar-fill{
+        border-radius: 10px;
+
+        &::after{
+            background-color: $green;
+        }
+    }
+}

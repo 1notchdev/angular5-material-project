@@ -1,0 +1,29 @@
+<app-header></app-header>
+<div id="support_container" class="page-container">
+	<form name="form" class="support-form" (ngSubmit)="f.form.valid && send()" #f="ngForm" novalidate>
+		<div class="row">
+			<div class="col-md-5 offset-md-1">
+				<h1 class="page-title">Support</h1>
+				
+				<mat-form-field class="example-full-width white-input-field" [ngClass]="{ 'has-error': f.submitted && !Name.valid }">
+					<input matInput type="text" placeholder="Name" name="Name" [(ngModel)]="support.name" #Name="ngModel" required >
+				</mat-form-field>
+				<mat-form-field class="example-full-width white-input-field" [ngClass]="{ 'has-error': f.submitted && !Email.valid }">
+					<input matInput type="email" placeholder="Email" name="Email" [(ngModel)]="support.email" #Email="ngModel" required >
+				</mat-form-field>
+				<mat-form-field class="example-full-width white-input-field" [ngClass]="{ 'has-error': f.submitted && !Subject.valid }">
+					<input matInput type="text" placeholder="Subject" name="Subject" [(ngModel)]="support.subject" #Subject="ngModel" required >
+				</mat-form-field>
+				<mat-form-field class="example-full-width white-input-field" [ngClass]="{ 'has-error': f.submitted && !Message.valid }">
+					<textarea matInput placeholder="Let us know what you need" name="Message" [(ngModel)]="support.message" #Message="ngModel"></textarea>
+				</mat-form-field>
+				<div class="form-group"><div *ngIf="error" class="alert alert-danger">{{error}}</div></div>
+			</div>
+			<div class="col-md-5 text-right align-self-bottom">
+				<div class="block">
+					<button type="submit" class="green-dot-button">Submit</button>
+				</div>
+			</div>
+		</div>
+	</form>
+</div>

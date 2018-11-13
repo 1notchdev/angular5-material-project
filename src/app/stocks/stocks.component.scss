@@ -1,0 +1,14 @@
+@import '../../assets/css/globals.scss';
+@import url(https://fonts.googleapis.com/css?family=Roboto:300);
+
+#stocks_container {
+	.card {
+		.card-title {
+			margin-bottom: 0px;
+		}
+		.stock-price {
+			font-size: 25px;
+			margin-bottom: 0px;
+		}
+	}
+}
